@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ДВОЙНЫЕ СТАНДАРТЫ — Регистрация</title>
+<meta name="description" content="Регистрация на конференцию 'Двойные стандарты' (Матф. 5:8). 31/10–01/11, начало в 17:00. 383 Holloway Rd, London, N7 0RN.">
+<style>
+  :root{
+    --bg:#0f0e0e;
+    --card:#191818;
+    --acc:#f4c061;
+    --text:#f3f3f3;
+    --muted:#bdbdbd;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--text);
+    background: radial-gradient(1200px 500px at 70% -20%, rgba(244,192,97,0.25), rgba(0,0,0,0)) , var(--bg);
+    line-height:1.5;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:20px}
+  .hero{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:20px;
+    align-items:center;
+    padding:28px 20px;
+  }
+  .badge{display:inline-block;background:rgba(244,192,97,.15);color:var(--acc);border:1px solid rgba(244,192,97,.35);padding:6px 10px;border-radius:999px;font-weight:600;font-size:.85rem;letter-spacing:.02em}
+  h1{
+    margin:.25em 0 .2em;
+    font-size: clamp(28px, 5vw, 46px);
+    line-height:1.05;
+  }
+  h1 span{color:var(--acc);}
+  .verse{color:var(--muted);font-style:italic;margin:.6em 0 1em}
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)) , var(--card);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    padding:18px;
+  }
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .pill{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(255,255,255,.03)}
+  .pill b{color:var(--acc)}
+  .speakers{display:flex;gap:12px;flex-wrap:wrap}
+  .sp{flex:1 1 220px;display:flex;gap:12px;align-items:center;padding:10px 12px;border:1px solid rgba(255,255,255,.1);border-radius:12px;background:rgba(255,255,255,.03)}
+  .avatar{
+    width:52px;height:52px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,255,255,.2)
+  }
+  form{display:grid;gap:12px;margin-top:16px}
+  label{font-weight:600;font-size:.95rem}
+  input,button{
+    width:100%;padding:14px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.16);
+    background:#0e0e0f;color:var(--text);font-size:1rem
+  }
+  input::placeholder{color:#9c9c9c}
+  button{
+    background:linear-gradient(180deg, #f5cf8c, #f0b751);
+    color:#1a1200;border:none;font-weight:800;letter-spacing:.02em;cursor:pointer
+  }
+  button:hover{filter:brightness(.98)}
+  .footer{opacity:.7;text-align:center;font-size:.9rem;margin:22px 0}
+  @media (max-width:800px){
+    .hero{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero card">
+      <div>
+        <span class="badge">Конференция</span>
+        <h1>ДВОЙНЫЕ СТАНДАРТЫ <span>CONFERENCE</span></h1>
+        <p class="verse">«Блаженны чистые сердцем, ибо они Бога узрят.» — <b>Матфея 5:8</b></p>
+        <div class="grid-2">
+          <div class="pill">📅 <div><b>31/10 — 01/11</b><br>Начало в 17:00</div></div>
+          <div class="pill">📍 <div><b>383 Holloway Rd, London</b><br>N7 0RN</div></div>
+        </div>
+        <div style="height:10px"></div>
+        <div class="speakers">
+          <div class="sp">
+            <img class="avatar" src="denis_kirilyuk.jpg" alt="Денис Кирилюк">
+            <div><b>Денис Кирилюк</b><br><span style="opacity:.7">Спикер</span></div>
+          </div>
+          <div class="sp">
+            <img class="avatar" src="yura_meshcheryakov.jpg" alt="Юра Мещеряков">
+            <div><b>Юра Мещеряков</b><br><span style="opacity:.7">Спикер</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h2 style="margin:0 0 6px;font-size:1.3rem">Регистрация</h2>
+        <p style="margin:0 0 12px;opacity:.85">Заполните форму и нажмите «Отправить».</p>
+        <form id="regform" action="https://formspree.io/f/movkbnjr" method="POST">
+          <div>
+            <label for="name">Имя и фамилия</label>
+            <input id="name" name="name" type="text" placeholder="Иван Иванов" required>
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" required>
+          </div>
+          <div>
+            <label for="phone">Номер телефона</label>
+            <input id="phone" name="phone" type="tel" placeholder="+44 7..." pattern="^[+0-9 ()-]{7,}$" required>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <input id="consent" type="checkbox" required style="width:auto;margin-top:4px">
+            <label for="consent" style="font-weight:400">
+              Даю согласие на обработку моих данных для цели регистрации на мероприятие.
+            </label>
+          </div>
+          <button type="submit">Отправить заявку</button>
+          <div style="font-size:.85rem;opacity:.75">После отправки с вами свяжутся по указанному телефону или e-mail.</div>
+        </form>
+        <div id="thanks" style="display:none;margin-top:10px" class="card">
+          <h3 style="margin:0 0 6px">✅ Спасибо! Заявка отправлена.</h3>
+          <p style="margin:0;opacity:.85">Мы свяжемся с вами в ближайшее время.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      © «Двойные стандарты» · Контакт для вопросов: <a href="mailto:newlifeyouthss@gmail.com" style="color:inherit">newlifeyouthss@gmail.com</a>
+    </div>
+  </div>
+<script>
+const form = document.getElementById('regform');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const res = await fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  });
+  if (res.ok) {
+    form.style.display = 'none';
+    document.getElementById('thanks').style.display = 'block';
+  } else {
+    alert('Ошибка при отправке. Проверьте подключение и попробуйте позже.');
+  }
+});
+</script>
+</body>
+</html>
